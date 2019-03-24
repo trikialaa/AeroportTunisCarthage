@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+    android:id="@+id/navigation_home"
+    android:icon="@drawable/ic_person_black_24dp"
+    android:title="Accueil" />
+
+    <item
+        android:id="@+id/navigation_board"
+        android:icon="@drawable/ic_person_black_24dp"
+        android:title="Tableau\nde vols" />
+
+    <item
+        android:id="@+id/navigation_book"
+        android:icon="@drawable/ic_person_black_24dp"
+        android:title="Réserver\nun vol" />
+
+    <item
+        android:id="@+id/navigation_services"
+        android:icon="@drawable/ic_person_black_24dp"
+        android:title="Services" />
+
+    <item
+        android:id="@+id/navigation_profile"
+        android:icon="@drawable/ic_person_black_24dp"
+        android:title="À propos" />
+
+</menu>

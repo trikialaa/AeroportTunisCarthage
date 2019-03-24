@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "178770301354",
+    "firebase_url": "https://aeroporttuniscarthage.firebaseio.com",
+    "project_id": "aeroporttuniscarthage",
+    "storage_bucket": "aeroporttuniscarthage.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:178770301354:android:2753b3d2a0665823",
+        "android_client_info": {
+          "package_name": "com.aeroways.ragnarok.aeroways"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "178770301354-48bk1kc6dvse9jk0ksv9k4bp3r8qnkeh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.aeroways.ragnarok.aeroways",
+            "certificate_hash": "f8255e9582476def385ce175c750414722beb33b"
+          }
+        },
+        {
+          "client_id": "178770301354-9lrppsa4a6sifqpbmvi1229cs5598lu2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7z7AJrZkcn77ntV4-5y-XbzrvZoGN3mg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "178770301354-9lrppsa4a6sifqpbmvi1229cs5598lu2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

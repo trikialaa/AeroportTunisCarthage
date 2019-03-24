@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".UI.flight_booking.FlightSearchFragment">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp">
+
+        <Spinner
+            android:id="@+id/inSpinner"
+            android:layout_width="170dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="16dp"
+            android:entries="@array/country_arrays"
+            android:prompt="@string/country_prompt"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Spinner
+            android:id="@+id/outSpinner"
+            android:layout_width="170dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="20dp"
+            android:entries="@array/country_arrays"
+            android:prompt="@string/country_prompt"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/inSpinner" />
+
+        <EditText
+            android:id="@+id/outDate"
+            android:layout_width="170dp"
+            android:layout_height="45dp"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginTop="16dp"
+            android:cursorVisible="false"
+            android:ems="10"
+            android:inputType="text"
+            android:text="JJ/MM/AAAA"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/inDate"
+            android:layout_width="170dp"
+            android:layout_height="45dp"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginTop="20dp"
+            android:cursorVisible="false"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="JJ/MM/AAAA"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/outDate" />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="239dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="156dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:text="Lancer la recherche"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </android.support.constraint.ConstraintLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        />
+
+</LinearLayout>
