@@ -7,6 +7,7 @@ import android.os.Bundle;
 
 import com.aeroways.ragnarok.aeroways.UI.bottom_nav.BottomNavFragment;
 import com.aeroways.ragnarok.aeroways.UI.flight_board.FlightBoardOutFragment;
+import com.aeroways.ragnarok.aeroways.UI.flight_booking.FlightSearchFragment;
 
 public class AppActivity extends AppCompatActivity {
 
@@ -33,7 +34,7 @@ public class AppActivity extends AppCompatActivity {
                 return;
             }
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.add(R.id.mainFragment, new FlightBoardOutFragment(),null);
+            fragmentTransaction.add(R.id.mainFragment, new FlightSearchFragment(),null);
             fragmentTransaction.commit();
         }
     }

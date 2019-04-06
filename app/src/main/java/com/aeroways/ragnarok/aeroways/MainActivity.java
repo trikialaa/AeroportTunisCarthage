@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.aeroways.ragnarok.aeroways.UI.login.LoginFragment;
+import com.aeroways.ragnarok.aeroways.UI.login.SignOnFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
                 return;
             }
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.add(R.id.fragment, new LoginFragment(),null);
+            fragmentTransaction.add(R.id.fragment, new SignOnFragment(),null);
             fragmentTransaction.commit();
         }
 
