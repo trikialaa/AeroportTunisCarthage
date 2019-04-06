@@ -18,14 +18,17 @@
         android:roundIcon="@drawable/ic_logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AppActivity"></activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".UI.luggage_tracer.QRCodeScannerActivity">
+
+        </activity>
+        <activity android:name=".AppActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg"
     tools:context=".UI.login.LoginFragment">
 
     <LinearLayout
@@ -18,7 +19,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:layout_marginTop="50dp">
+            android:layout_marginTop="50dp"
+            android:textColorHint="@android:color/white">
 
             <android.support.design.widget.TextInputEditText
                 android:id="@+id/edittextInput_email"
@@ -32,7 +34,8 @@
                 android:drawableLeft="@drawable/ic_mail_black_24dp"
                 android:drawablePadding="5dp"
                 android:hint="E-mail"
-                android:inputType="textEmailAddress" />
+                android:inputType="textEmailAddress"
+                android:textColor="@android:color/white" />
 
         </android.support.design.widget.TextInputLayout>
 
@@ -40,7 +43,8 @@
             android:id="@+id/textInput_pass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp">
+            android:layout_margin="5dp"
+            android:textColorHint="@android:color/white">
 
             <android.support.design.widget.TextInputEditText
                 android:id="@+id/edittextInput_pass"
@@ -52,7 +56,8 @@
                 android:drawableLeft="@drawable/ic_assignment_black_24dp"
                 android:drawablePadding="5dp"
                 android:hint="Mot de passe"
-                android:inputType="textPassword" />
+                android:inputType="textPassword"
+                android:textColor="@android:color/white" />
 
         </android.support.design.widget.TextInputLayout>
 
@@ -77,7 +82,7 @@
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:text="Encore pas de compte? créez un compte maintenant"
-            android:textColor="@android:color/black"
+            android:textColor="@android:color/white"
             android:textSize="12sp"
             android:textStyle="bold" />
 

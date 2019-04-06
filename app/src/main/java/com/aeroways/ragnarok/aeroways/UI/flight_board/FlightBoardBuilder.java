@@ -2,6 +2,8 @@ package com.aeroways.ragnarok.aeroways.UI.flight_board;
 
 import android.util.Log;
 
+import com.aeroways.ragnarok.aeroways.Entities.FlightBoardEntry;
+
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;

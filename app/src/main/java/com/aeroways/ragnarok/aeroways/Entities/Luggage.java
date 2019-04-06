@@ -10,6 +10,8 @@ public class Luggage {
 
     private double weight;
 
+    private String picUrl;
+
     private String status;
 
     private String lastSeen;
@@ -61,4 +63,8 @@ public class Luggage {
     public void setLastSeen(String lastSeen) {
         this.lastSeen = lastSeen;
     }
+
+    public String getPicUrl() { return picUrl; }
+
+    public void setPicUrl(String picUrl) { this.picUrl = picUrl; }
 }

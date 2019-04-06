@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
                 return;
             }
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.add(R.id.fragment, new SignOnFragment(),null);
+            fragmentTransaction.add(R.id.fragment, new LoginFragment(),null);
             fragmentTransaction.commit();
         }
 

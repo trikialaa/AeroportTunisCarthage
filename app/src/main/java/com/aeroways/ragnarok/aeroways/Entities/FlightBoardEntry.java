@@ -1,4 +1,4 @@
-package com.aeroways.ragnarok.aeroways.UI.flight_board;
+package com.aeroways.ragnarok.aeroways.Entities;
 
 public class FlightBoardEntry {
 

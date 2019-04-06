@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.aeroways.ragnarok.aeroways.Entities.FlightBoardEntry;
 import com.aeroways.ragnarok.aeroways.R;
 import java.util.List;
 
