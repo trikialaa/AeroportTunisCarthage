@@ -14,13 +14,30 @@
         android:gravity="center_horizontal"
         android:orientation="vertical">
 
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50dp" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="343dp"
+            android:layout_height="185dp"
+            android:src="@drawable/logo" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50dp" />
+
         <android.support.design.widget.TextInputLayout
             android:id="@+id/textInput_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:layout_marginTop="50dp"
-            android:textColorHint="@android:color/white">
+            android:textColorHint="@android:color/white"
+            android:backgroundTint="#FFFFFF">
 
             <android.support.design.widget.TextInputEditText
                 android:id="@+id/edittextInput_email"
@@ -35,7 +52,8 @@
                 android:drawablePadding="5dp"
                 android:hint="E-mail"
                 android:inputType="textEmailAddress"
-                android:textColor="@android:color/white" />
+                android:textColor="@android:color/white"
+                android:backgroundTint="#FFFFFF"/>
 
         </android.support.design.widget.TextInputLayout>
 
@@ -44,7 +62,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:textColorHint="@android:color/white">
+            android:textColorHint="@android:color/white"
+            android:backgroundTint="#FFFFFF">
 
             <android.support.design.widget.TextInputEditText
                 android:id="@+id/edittextInput_pass"
@@ -57,7 +76,8 @@
                 android:drawablePadding="5dp"
                 android:hint="Mot de passe"
                 android:inputType="textPassword"
-                android:textColor="@android:color/white" />
+                android:textColor="@android:color/white"
+                android:backgroundTint="#FFFFFF"/>
 
         </android.support.design.widget.TextInputLayout>
 
@@ -70,7 +90,8 @@
             android:layout_marginTop="44dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
-            android:text="S'identifier" />
+            android:text="S'identifier"
+            android:textColor="@android:color/background_dark" />
 
         <TextView
             android:id="@+id/textView6"
@@ -84,7 +105,8 @@
             android:text="Encore pas de compte? créez un compte maintenant"
             android:textColor="@android:color/white"
             android:textSize="12sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:onClick="gotoSignOn"/>
 
     </LinearLayout>
 

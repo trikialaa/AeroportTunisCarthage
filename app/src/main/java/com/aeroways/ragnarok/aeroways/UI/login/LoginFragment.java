@@ -68,6 +68,8 @@ public class LoginFragment extends Fragment implements Validator.ValidationListe
 
     private User user;
 
+    Button mSignInButton;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -109,6 +111,11 @@ public class LoginFragment extends Fragment implements Validator.ValidationListe
         });
 
         mDatabase = FirebaseDatabase.getInstance();
+
+    }
+
+    public void onSignOnClick(View v){
+        FragmentUtils.loadMain(getActivity(),new LoginFragment());
     }
 
     @Override

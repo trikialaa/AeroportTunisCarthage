@@ -18,12 +18,14 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ablanco.imageprovider.ImageProvider;
@@ -151,6 +153,33 @@ public class SignOnFragment extends Fragment implements Validator.ValidationList
         signOn = getActivity().findViewById(R.id.button2);
         imageSelector = getActivity().findViewById(R.id.button3);
         imageView = getActivity().findViewById(R.id.imageView);
+
+
+        // Spinner
+
+        mSex.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                ((TextView) view).setTextColor(Color.WHITE); //Change selected text color
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        mNat.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                ((TextView) view).setTextColor(Color.WHITE); //Change selected text color
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
         // Date Picker
         mBirthDate.setFocusable(false);
@@ -332,4 +361,6 @@ public class SignOnFragment extends Fragment implements Validator.ValidationList
             }
         }
     }
+
+
 }
