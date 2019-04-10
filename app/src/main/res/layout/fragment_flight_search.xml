@@ -42,6 +42,7 @@
                             android:layout_marginTop="10dp">
 
                             <RadioButton
+                                android:id="@+id/r11"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
@@ -53,6 +54,7 @@
                                 android:textSize="12dp" />
 
                             <RadioButton
+                                android:id="@+id/r12"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
@@ -88,6 +90,7 @@
                                 android:textSize="12dp" />
 
                             <TextView
+                                android:id="@+id/a_source"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
@@ -100,6 +103,7 @@
                                 android:textStyle="bold" />
 
                             <TextView
+                                android:id="@+id/p_source"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
@@ -131,6 +135,7 @@
                                 android:textSize="12dp" />
 
                             <TextView
+                                android:id="@+id/a_dest"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
@@ -143,6 +148,7 @@
                                 android:textStyle="bold" />
 
                             <TextView
+                                android:id="@+id/p_dest"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
@@ -173,6 +179,7 @@
                     android:padding="10dp">
 
                     <LinearLayout
+                        android:id="@+id/l_depart"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentStart="false"
@@ -204,6 +211,7 @@
                         </LinearLayout>
 
                         <TextView
+                            android:id="@+id/d1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
@@ -214,6 +222,7 @@
                             android:textStyle="bold" />
 
                         <TextView
+                            android:id="@+id/y1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
@@ -225,6 +234,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/l_retour"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
@@ -255,6 +265,7 @@
                         </LinearLayout>
 
                         <TextView
+                            android:id="@+id/d2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
@@ -265,6 +276,7 @@
                             android:textStyle="bold" />
 
                         <TextView
+                            android:id="@+id/y2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
@@ -296,6 +308,7 @@
                     android:padding="10dp">
 
                     <LinearLayout
+                        android:id="@+id/box1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentStart="false"
@@ -323,6 +336,7 @@
                             android:textSize="12dp" />
 
                         <TextView
+                            android:id="@+id/n1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
@@ -335,6 +349,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/box2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="false"
@@ -361,6 +376,7 @@
                             android:textSize="12dp" />
 
                         <TextView
+                            android:id="@+id/n2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
@@ -373,6 +389,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/box3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
@@ -399,6 +416,7 @@
                             android:textSize="12dp" />
 
                         <TextView
+                            android:id="@+id/n3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
@@ -428,6 +446,7 @@
                     android:layout_marginTop="10dp">
 
                     <RadioButton
+                        android:id="@+id/r21"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
@@ -439,6 +458,7 @@
                         android:textSize="12dp" />
 
                     <RadioButton
+                        android:id="@+id/r22"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
@@ -449,6 +469,7 @@
                         android:textSize="12dp" />
 
                     <RadioButton
+                        android:id="@+id/r23"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"

@@ -109,9 +109,7 @@ public class SimpleFlightBookingService {
             HttpEntity entity = r2.getEntity();
             String responseString = EntityUtils.toString(entity, "UTF-8");
             Log.e("MyApp",String.valueOf(responseString));
-            Log.e("MyApp", "Unirest Jawou behy");
             PollingResponse pollingResponse = gson.fromJson(String.valueOf(responseString), PollingResponse.class);
-            Log.e("MyApp", "Gson jawou behy");
             List<Carriers> carriers = pollingResponse.getCarriers();
             List<Legs> legs = pollingResponse.getLegs();
             List<Itineraries> itineraries = pollingResponse.getItineraries();
