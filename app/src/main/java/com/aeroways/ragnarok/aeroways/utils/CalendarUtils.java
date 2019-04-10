@@ -1,5 +1,9 @@
 package com.aeroways.ragnarok.aeroways.utils;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class CalendarUtils {
 
     public static String monthNumberToMonthName(int monthNumber){
@@ -46,5 +50,26 @@ public class CalendarUtils {
         }
 
         return result;
+    }
+
+    public static boolean compareDate(String sdate1,String sdate2) { // Returns True if date1 < date2
+        try {
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            Date date1 = sdf.parse(sdate1);
+            Date date2 = sdf.parse(sdate2);
+
+            System.out.println("date1 : " + sdf.format(date1));
+            System.out.println("date2 : " + sdf.format(date2));
+
+            if (date1.compareTo(date2) > 0) {
+                return false;
+            } else {
+                return true;
+            }
+        } catch (ParseException e){
+            return false;
+        }
+
+
     }
 }

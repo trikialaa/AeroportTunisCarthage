@@ -42,7 +42,7 @@ public class SimpleFlightBookingService {
 
     private static Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd'T'HH:mm:ssZ").create();
 
-    public static List<FlightBookingEntry> getFlightBookingEntries(String originPlace, String destinationPlace, String outboundDate) {
+    public static List<FlightBookingEntry> getFlightBookingEntries(String originPlace, String destinationPlace, String outboundDate, String s_adults, String s_children, String s_infants, String cabinClass) {
 
         HttpConnectionParams.setConnectionTimeout(httpParams,20000);
         HttpConnectionParams.setSoTimeout(httpParams,20000);
@@ -56,9 +56,9 @@ public class SimpleFlightBookingService {
 
             HttpPost rep =  new HttpPost("https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/pricing/v1.0");
             List<NameValuePair> nameValuePairs = new ArrayList<>();
-            nameValuePairs.add(new BasicNameValuePair("cabinClass", "economy"));
-            nameValuePairs.add(new BasicNameValuePair("children", "0"));
-            nameValuePairs.add(new BasicNameValuePair("infants", "0"));
+            nameValuePairs.add(new BasicNameValuePair("cabinClass", cabinClass));
+            nameValuePairs.add(new BasicNameValuePair("children", s_children));
+            nameValuePairs.add(new BasicNameValuePair("infants", s_infants));
             nameValuePairs.add(new BasicNameValuePair("groupPricing", "false"));
             nameValuePairs.add(new BasicNameValuePair("country", "TN"));
             nameValuePairs.add(new BasicNameValuePair("currency", "TND"));
@@ -66,7 +66,7 @@ public class SimpleFlightBookingService {
             nameValuePairs.add(new BasicNameValuePair("originPlace", originPlace));
             nameValuePairs.add(new BasicNameValuePair("destinationPlace", destinationPlace));
             nameValuePairs.add(new BasicNameValuePair("outboundDate", outboundDate));
-            nameValuePairs.add(new BasicNameValuePair("adults", "1"));
+            nameValuePairs.add(new BasicNameValuePair("adults", s_adults));
             rep.setHeader("X-RapidAPI-Key", "62f0838904mshc39538c32d98ec0p142683jsn8bac895a9bf8");
             rep.setHeader("Content-Type", "application/x-www-form-urlencoded");
             rep.setEntity(new UrlEncodedFormEntity(nameValuePairs, HTTP.UTF_8));
