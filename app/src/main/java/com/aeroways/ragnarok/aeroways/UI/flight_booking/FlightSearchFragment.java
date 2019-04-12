@@ -27,6 +27,8 @@ import com.aeroways.ragnarok.aeroways.R;
 import com.aeroways.ragnarok.aeroways.UI.flight_booking.data.JsonPlaces;
 import com.aeroways.ragnarok.aeroways.UI.flight_booking.data.polling.Places;
 import com.aeroways.ragnarok.aeroways.utils.CalendarUtils;
+import com.aeroways.ragnarok.aeroways.utils.FragmentUtils;
+import com.aeroways.ragnarok.aeroways.utils.KeyboardHider;
 import com.aeroways.ragnarok.aeroways.utils.PlacesUtils;
 
 import java.util.ArrayList;
@@ -40,10 +42,6 @@ import in.galaxyofandroid.spinerdialog.SpinnerDialog;
  * A simple {@link Fragment} subclass.
  */
 public class FlightSearchFragment extends Fragment implements NumberPicker.OnValueChangeListener {
-/*
-    private List<FlightBookingEntry> flightBookingEntries = new ArrayList<FlightBookingEntry>();
-    private TextView test;
-*/
 
     RadioButton r11,r12,r21,r22,r23;
     DatePickerDialog.OnDateSetListener onDateSetListener,onDateSetListener2;
@@ -68,6 +66,8 @@ public class FlightSearchFragment extends Fragment implements NumberPicker.OnVal
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        KeyboardHider.closeKeyboard(getActivity());
 
         n1 = getActivity().findViewById(R.id.n1);
         n2 = getActivity().findViewById(R.id.n2);
@@ -283,8 +283,15 @@ public class FlightSearchFragment extends Fragment implements NumberPicker.OnVal
                 s_children = n2.getText().toString();
                 s_infants = n3.getText().toString();
 
-                if (!(CalendarUtils.compareDate(s_dd,s_da))) {
-                    Toast.makeText(getActivity(), "Veuillez vérifier les dates de départ et d'arrivée",
+                if (s_source.equals(s_destination)){
+                    Toast.makeText(getActivity(), "L'aéroport d'origine doit être différent de la destination",
+                            Toast.LENGTH_SHORT).show();
+                } else if (!((s_source.equals("TUN-sky"))||(s_destination.equals("TUN-sky")))){
+                    Toast.makeText(getActivity(), "L'aéroport Tunis - Carthage doit figurer dans l'origine ou la destination",
+                            Toast.LENGTH_SHORT).show();
+                }
+                else if (!(CalendarUtils.compareDate(s_dd,s_da))) {
+                    Toast.makeText(getActivity(), "Veuillez vérifier les dates de départ et de retour",
                             Toast.LENGTH_SHORT).show();
                 } else if ((Integer.parseInt(s_adults)+Integer.parseInt(s_children)+Integer.parseInt(s_infants))>6){
                     Toast.makeText(getActivity(), "Vous pouvez réserver des tickets pour 6 personnes au maximum",
@@ -299,10 +306,36 @@ public class FlightSearchFragment extends Fragment implements NumberPicker.OnVal
 
                     if (r11.isChecked()){ // Vol aller retour
 
+                        Bundle args = new Bundle();
 
+                        args.putString("originPlace",s_source);
+                        args.putString("destinationPlace",s_destination);
+                        args.putString("outboundDate",s_dd);
+                        args.putString("inboundDate",s_da);
+                        args.putString("s_adults",s_adults);
+                        args.putString("s_children",s_children);
+                        args.putString("s_infants",s_infants);
+                        args.putString("cabinClass",cabinClass);
+
+                        DoubleFlightResultsFragment newFragment = new DoubleFlightResultsFragment ();
+                        newFragment.setArguments(args);
+                        FragmentUtils.loadApp(getActivity(),newFragment);
 
                     } else if (r12.isChecked()){ // Vol aller simple
 
+                        Bundle args = new Bundle();
+
+                        args.putString("originPlace",s_source);
+                        args.putString("destinationPlace",s_destination);
+                        args.putString("outboundDate",s_dd);
+                        args.putString("s_adults",s_adults);
+                        args.putString("s_children",s_children);
+                        args.putString("s_infants",s_infants);
+                        args.putString("cabinClass",cabinClass);
+
+                        SimpleFlightResultsFragment newFragment = new SimpleFlightResultsFragment ();
+                        newFragment.setArguments(args);
+                        FragmentUtils.loadApp(getActivity(),newFragment);
 
 
                     }
@@ -312,36 +345,8 @@ public class FlightSearchFragment extends Fragment implements NumberPicker.OnVal
             }
         });
 
-
-/*        test = getActivity().findViewById(R.id.textView13);
-        new FlightSearchUpdater().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR); */
     }
 
-/*
-    public class FlightSearchUpdater extends AsyncTask<Void,Void,Void> {
-
-        @Override
-        protected Void doInBackground(Void... params) {
-            try {
-                flightBookingEntries = DoubleFlightBookingService.getFlightBookingEntries("TUN-sky","CDG-sky","2019-04-06","2019-04-12");
-            } catch (Exception e) {
-                Log.e("MyApp","Background failed");
-                e.printStackTrace();
-
-            }
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(Void aVoid) {
-            Log.e("MyApp","Starting post execute");
-            super.onPostExecute(aVoid);
-            String s="";
-            for (int i=0;i<flightBookingEntries.size();i++) s+= flightBookingEntries.get(i).getPrice()+"\n";
-            test.setText(s);
-        }
-    }
-*/
     @Override
     public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
     }

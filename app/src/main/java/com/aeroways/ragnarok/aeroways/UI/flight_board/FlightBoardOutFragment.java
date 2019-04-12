@@ -58,6 +58,7 @@ public class FlightBoardOutFragment extends Fragment {
             RecyclerView recyclerView = getActivity().findViewById(R.id.recycler_view);
             recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
             recyclerView.setHasFixedSize(true);
+            recyclerView.setNestedScrollingEnabled(false);
             recyclerView.setAdapter(new FlightBoardRecyclerViewAdapter(getActivity(),fbe));
 
         }

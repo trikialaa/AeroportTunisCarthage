@@ -27,6 +27,7 @@ import org.apache.http.params.HttpParams;
 import org.apache.http.protocol.HTTP;
 import org.apache.http.util.EntityUtils;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 
@@ -59,7 +60,7 @@ public class SimpleFlightBookingService {
             nameValuePairs.add(new BasicNameValuePair("cabinClass", cabinClass));
             nameValuePairs.add(new BasicNameValuePair("children", s_children));
             nameValuePairs.add(new BasicNameValuePair("infants", s_infants));
-            nameValuePairs.add(new BasicNameValuePair("groupPricing", "false"));
+            nameValuePairs.add(new BasicNameValuePair("groupPricing", "true"));
             nameValuePairs.add(new BasicNameValuePair("country", "TN"));
             nameValuePairs.add(new BasicNameValuePair("currency", "TND"));
             nameValuePairs.add(new BasicNameValuePair("locale", "fr-FR"));
@@ -100,7 +101,7 @@ public class SimpleFlightBookingService {
         String repStringJson = "";
 
         try{
-            HttpGet rep2 = new HttpGet("https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/pricing/uk2/v1.0/" + sessionKey + "?sortType=price&sortOrder=asc&pageIndex=0&pageSize=100");
+            HttpGet rep2 = new HttpGet("https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/pricing/uk2/v1.0/" + sessionKey + "?sortType=price&sortOrder=asc&pageIndex=0&pageSize=20");
             rep2.setHeader("X-RapidAPI-Key", "62f0838904mshc39538c32d98ec0p142683jsn8bac895a9bf8");
             org.apache.http.HttpResponse r2 = client.execute(rep2);
             repStringJson = r2.getEntity().toString();
@@ -139,6 +140,7 @@ public class SimpleFlightBookingService {
 
                 result.add(flightBookingEntry);
             }
+            Collections.sort(result);
         } catch (Exception ex){
             Log.e("MyApp", ex.toString());
             ex.printStackTrace();

@@ -10,13 +10,16 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.aeroways.ragnarok.aeroways.Entities.User;
 import com.aeroways.ragnarok.aeroways.UI.login.LoginFragment;
 import com.aeroways.ragnarok.aeroways.UI.login.SignOnFragment;
 import com.aeroways.ragnarok.aeroways.utils.FragmentUtils;
+import com.aeroways.ragnarok.aeroways.utils.SharedPreferencesUtils;
 
 public class MainActivity extends AppCompatActivity {
 
     private static FragmentManager fragmentManager;
+    User user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +34,10 @@ public class MainActivity extends AppCompatActivity {
             window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
             window.setStatusBarColor(getResources().getColor(R.color.colorPrimary));
         }
+
+        // Import user profile
+
+        user = SharedPreferencesUtils.loadUser(this);
 
         // Fragment Test
 

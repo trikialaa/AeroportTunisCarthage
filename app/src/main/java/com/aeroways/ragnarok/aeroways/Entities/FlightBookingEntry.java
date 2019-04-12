@@ -2,7 +2,7 @@ package com.aeroways.ragnarok.aeroways.Entities;
 
 import android.support.annotation.NonNull;
 
-public class FlightBookingEntry {
+public class FlightBookingEntry implements Comparable<FlightBookingEntry> {
 
     private int id;
 
@@ -57,5 +57,10 @@ public class FlightBookingEntry {
 
     public void setBookingUrl(@NonNull String bookingUrl) {
         this.bookingUrl = bookingUrl;
+    }
+
+    @Override
+    public int compareTo(@NonNull FlightBookingEntry o) {
+        return (int)(Double.parseDouble(this.getPrice().substring(0, this.getPrice().length() - 4)) - Double.parseDouble(o.getPrice().substring(0, this.getPrice().length() - 4)));
     }
 }

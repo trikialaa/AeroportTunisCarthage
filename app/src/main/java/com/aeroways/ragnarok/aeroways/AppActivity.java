@@ -8,10 +8,8 @@ import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
 
-import com.aeroways.ragnarok.aeroways.UI.bottom_nav.BottomNavFragment;
-import com.aeroways.ragnarok.aeroways.UI.flight_board.FlightBoardInFragment;
+import com.aeroways.ragnarok.aeroways.UI.flight_board.FlightBoardOutFragment;
 import com.aeroways.ragnarok.aeroways.UI.flight_booking.FlightSearchFragment;
-import com.aeroways.ragnarok.aeroways.UI.luggage_tracer.LuggageListFragment;
 
 public class AppActivity extends AppCompatActivity {
 
@@ -32,15 +30,6 @@ public class AppActivity extends AppCompatActivity {
         }
 
         fragmentManager = getSupportFragmentManager();
-
-        if (findViewById(R.id.navFragment)!=null){
-            if (savedInstanceState!=null){
-                return;
-            }
-            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.add(R.id.navFragment, new BottomNavFragment(),null);
-            fragmentTransaction.commit();
-        }
 
         if (findViewById(R.id.mainFragment)!=null){
             if (savedInstanceState!=null){

@@ -47,6 +47,24 @@ public class BitmapUtils {
         return resized;
     }
 
+    public static Bitmap LooslessToSquare80(Bitmap bitmap){
+        int width  = bitmap.getWidth();
+        int height = bitmap.getHeight();
+        double ratio = (double)width / height;
+        int newWidth,newHeight;
+        if (width>height){
+            newWidth=80;
+            newHeight=(int)(newWidth/ratio);
+        } else {
+            newHeight=80;
+            newWidth=(int)(newHeight*ratio);
+        }
+        Bitmap resized = Bitmap.createScaledBitmap(bitmap,newWidth,newHeight,true);
+
+        return resized;
+    }
+
+
     public static File bitmapToFile(Context context,Bitmap bitmap) throws IOException {
         File f = new File(context.getCacheDir(), "ProfilePicture");
         f.createNewFile();
@@ -76,7 +94,7 @@ public class BitmapUtils {
             try {
                 InputStream in = new java.net.URL(urldisplay).openStream();
                 mIcon11 = BitmapFactory.decodeStream(in);
-                mIcon11 = cropToSquare80(mIcon11);
+                mIcon11 = LooslessToSquare80(mIcon11);
             } catch (Exception e) {
                 e.printStackTrace();
             }
