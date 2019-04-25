@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.aeroways.ragnarok.aeroways.UI.contact.ContactFragment;
 import com.aeroways.ragnarok.aeroways.UI.flight_board.FlightBoardOutFragment;
 import com.aeroways.ragnarok.aeroways.UI.flight_booking.FlightSearchFragment;
 
@@ -36,7 +37,7 @@ public class AppActivity extends AppCompatActivity {
                 return;
             }
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.add(R.id.mainFragment, new FlightSearchFragment(),null);
+            fragmentTransaction.add(R.id.mainFragment, new ContactFragment(),null);
             fragmentTransaction.commit();
         }
     }

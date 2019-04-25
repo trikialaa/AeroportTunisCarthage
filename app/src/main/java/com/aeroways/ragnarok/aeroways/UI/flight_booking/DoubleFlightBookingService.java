@@ -28,6 +28,7 @@ import org.apache.http.protocol.HTTP;
 import org.apache.http.util.EntityUtils;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import static com.aeroways.ragnarok.aeroways.utils.SkyscannerUtils.durationToString;
@@ -106,7 +107,7 @@ public class DoubleFlightBookingService {
         String repStringJson = "";
 
         try {
-            HttpGet rep2 = new HttpGet("https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/pricing/uk2/v1.0/" + sessionKey + "?sortType=price&sortOrder=asc&pageIndex=0&pageSize=200");
+            HttpGet rep2 = new HttpGet("https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/pricing/uk2/v1.0/" + sessionKey + "?sortType=price&sortOrder=asc&pageIndex=0&pageSize=20");
             rep2.setHeader("X-RapidAPI-Key", "62f0838904mshc39538c32d98ec0p142683jsn8bac895a9bf8");
             org.apache.http.HttpResponse r2 = client.execute(rep2);
             repStringJson = r2.getEntity().toString();
@@ -147,6 +148,7 @@ public class DoubleFlightBookingService {
 
                 result.add(flightBookingEntry);
             }
+            Collections.sort(result);
 
         } catch (Exception ex) {
         }
