@@ -17,6 +17,9 @@ public class FlightBookingEntry implements Comparable<FlightBookingEntry> {
     @NonNull
     private String bookingUrl;
 
+    public FlightBookingEntry(){
+    }
+
     public int getId() {
         return id;
     }
