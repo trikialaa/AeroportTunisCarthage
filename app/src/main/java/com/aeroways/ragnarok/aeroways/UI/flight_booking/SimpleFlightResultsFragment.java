@@ -72,7 +72,7 @@ public class SimpleFlightResultsFragment extends Fragment {
             recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
             recyclerView.setHasFixedSize(true);
             recyclerView.setNestedScrollingEnabled(false);
-            recyclerView.setAdapter(new SimpleFlightRecyclerViewAdapter(getActivity(),flightBookingEntries));
+            recyclerView.setAdapter(new SimpleFlightRecyclerViewAdapter(getActivity(),flightBookingEntries,s_adults,s_children,s_infants,cabinClass));
         }
     }
 

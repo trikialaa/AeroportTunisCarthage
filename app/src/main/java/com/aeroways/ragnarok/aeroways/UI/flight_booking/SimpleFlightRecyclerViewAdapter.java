@@ -1,7 +1,10 @@
 package com.aeroways.ragnarok.aeroways.UI.flight_booking;
 
+import android.app.Activity;
 import android.content.Context;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -17,6 +20,8 @@ import com.aeroways.ragnarok.aeroways.Entities.Luggage;
 import com.aeroways.ragnarok.aeroways.R;
 import com.aeroways.ragnarok.aeroways.UI.luggage_tracer.LuggageRecyclerViewAdapter;
 import com.aeroways.ragnarok.aeroways.utils.BitmapUtils;
+import com.aeroways.ragnarok.aeroways.utils.FragmentUtils;
+import com.google.gson.Gson;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,11 +30,16 @@ public class SimpleFlightRecyclerViewAdapter extends RecyclerView.Adapter<Simple
 
     private Context context;
     private List<FlightBookingEntry> flightBookingEntries;
+    private String s_adults,s_children,s_infants,cabinClass;
 
 
-    public SimpleFlightRecyclerViewAdapter(Context context,List<FlightBookingEntry> flightBookingEntries){
+    public SimpleFlightRecyclerViewAdapter(Context context,List<FlightBookingEntry> flightBookingEntries,String s_adults,String s_children,String s_infants,String cabinClass){
         this.context=context;
         this.flightBookingEntries=flightBookingEntries;
+        this.s_adults=s_adults;
+        this.s_children=s_children;
+        this.s_infants=s_infants;
+        this.cabinClass=cabinClass;
     }
 
     @NonNull
@@ -50,11 +60,20 @@ public class SimpleFlightRecyclerViewAdapter extends RecyclerView.Adapter<Simple
         holder.t_arrivee.setText(flightBookingEntry.getOutboundFlight().getArrival().substring(11,16));
         holder.prix.setText("Prix : "+flightBookingEntry.getPrice());
         BitmapUtils.loadImageFromURL(flightBookingEntry.getOutboundFlight().getCarrierPictureLink(),holder.pic);
+
         holder.reserver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, flightBookingEntry.getBookingUrl(),
-                        Toast.LENGTH_SHORT).show();
+
+                Bundle bundle = new Bundle();
+                bundle.putString("flightBookingEntry",new Gson().toJson(flightBookingEntry));
+                bundle.putInt("adults",Integer.parseInt(s_adults));
+                bundle.putInt("children",Integer.parseInt(s_children));
+                bundle.putInt("infants",Integer.parseInt(s_infants));
+                bundle.putString("cabinClass",cabinClass);
+                PassengerDetailsFragment passengerDetailsFragment = new PassengerDetailsFragment();
+                passengerDetailsFragment.setArguments(bundle);
+                FragmentUtils.loadApp((FragmentActivity)context,passengerDetailsFragment);
             }
         });
     }

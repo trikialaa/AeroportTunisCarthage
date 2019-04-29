@@ -68,7 +68,7 @@ public class SimpleFlightBookingService {
             nameValuePairs.add(new BasicNameValuePair("destinationPlace", destinationPlace));
             nameValuePairs.add(new BasicNameValuePair("outboundDate", outboundDate));
             nameValuePairs.add(new BasicNameValuePair("adults", s_adults));
-            rep.setHeader("X-RapidAPI-Key", "62f0838904mshc39538c32d98ec0p142683jsn8bac895a9bf8");
+            rep.setHeader("X-RapidAPI-Key", "88b19aff4emsh742a20fe7961742p107e5djsn7822a8af7af3");
             rep.setHeader("Content-Type", "application/x-www-form-urlencoded");
             rep.setEntity(new UrlEncodedFormEntity(nameValuePairs, HTTP.UTF_8));
 
@@ -86,8 +86,8 @@ public class SimpleFlightBookingService {
             Log.e("MyApp",responseString);
             for (Header header: r.getAllHeaders()) {
                 if (header.getName().equalsIgnoreCase("location")) {
-                    sessionKey = header.getValue().replace("http://partners.api.skyscanner.net/apiservices/pricing/uk1/v1.0/","");
-                    Log.e("MyApp",sessionKey);
+                    sessionKey = header.getValue().replace("http://partners.api.skyscanner.net/apiservices/pricing/uk2/v1.0/","");
+                    Log.e("MyApp",""+sessionKey);
                 }
             }
 
@@ -102,7 +102,7 @@ public class SimpleFlightBookingService {
 
         try{
             HttpGet rep2 = new HttpGet("https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/pricing/uk2/v1.0/" + sessionKey + "?sortType=price&sortOrder=asc&pageIndex=0&pageSize=20");
-            rep2.setHeader("X-RapidAPI-Key", "62f0838904mshc39538c32d98ec0p142683jsn8bac895a9bf8");
+            rep2.setHeader("X-RapidAPI-Key", "88b19aff4emsh742a20fe7961742p107e5djsn7822a8af7af3");
             org.apache.http.HttpResponse r2 = client.execute(rep2);
             repStringJson = r2.getEntity().toString();
             int status = r2.getStatusLine().getStatusCode();

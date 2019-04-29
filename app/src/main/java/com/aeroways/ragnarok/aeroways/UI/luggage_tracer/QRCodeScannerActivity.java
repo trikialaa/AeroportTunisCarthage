@@ -14,9 +14,13 @@ import android.widget.Toast;
 import com.aeroways.ragnarok.aeroways.Entities.Luggage;
 import com.aeroways.ragnarok.aeroways.R;
 import com.aeroways.ragnarok.aeroways.utils.BagageQRCodeUtils;
+import com.aeroways.ragnarok.aeroways.utils.FragmentUtils;
+import com.aeroways.ragnarok.aeroways.utils.SharedPreferencesUtils;
 import com.budiyev.android.codescanner.CodeScanner;
 import com.budiyev.android.codescanner.CodeScannerView;
 import com.budiyev.android.codescanner.DecodeCallback;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.zxing.Result;
 
 public class QRCodeScannerActivity extends AppCompatActivity {
@@ -37,6 +41,7 @@ public class QRCodeScannerActivity extends AppCompatActivity {
         }
 
         final Activity activity = this;
+        final FirebaseDatabase database = FirebaseDatabase.getInstance();
         CodeScannerView scannerView = findViewById(R.id.scanner_view);
         mCodeScanner = new CodeScanner(this, scannerView);
         mCodeScanner.setDecodeCallback(new DecodeCallback() {
@@ -48,6 +53,9 @@ public class QRCodeScannerActivity extends AppCompatActivity {
 
                         Luggage luggage = BagageQRCodeUtils.decodeQR(result.getText());
                         if (luggage!=null){
+                            DatabaseReference ref = database.getReference("users/"+ SharedPreferencesUtils.loadUser(activity).getId()+"/reservations/"+activity.getIntent().getExtras().getString("flightId")+"/bagages/"+luggage.getId());
+                            ref.setValue(luggage);
+
                             Toast.makeText(activity,"QR Code scanné avec succès" , Toast.LENGTH_SHORT).show();
                             Handler handler = new Handler();
                             handler.postDelayed(new Runnable() {

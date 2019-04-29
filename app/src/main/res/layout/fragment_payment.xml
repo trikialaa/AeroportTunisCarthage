@@ -1,10 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".UI.flight_booking.PaymentFragment" >
+    android:paddingTop="30dp"
+    tools:context=".UI.flight_booking.PaymentFragment">
+
+    <ImageView
+        android:id="@+id/imageView12"
+        android:layout_width="match_parent"
+        android:layout_height="27dp"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/credit_card" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -57,7 +66,7 @@
             android:layout_weight="1"
             android:fontFamily="sans-serif"
             android:gravity="start"
-            android:text="Num Carte Crédit :"
+            android:text="Date d'expiration :"
             android:textAlignment="viewStart"
             android:textSize="18sp" />
 
@@ -91,7 +100,7 @@
             android:layout_weight="1"
             android:fontFamily="sans-serif"
             android:gravity="start"
-            android:text="Num Carte Crédit :"
+            android:text="Code secret :"
             android:textAlignment="viewStart"
             android:textSize="18sp" />
 
@@ -107,4 +116,92 @@
             android:padding="5dp"
             android:textSize="14sp" />
     </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="30dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="20dp"
+        android:background="#F1F1F1"
+        android:orientation="vertical">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/textView34"
+            android:layout_width="293dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif"
+            android:gravity="start"
+            android:text="Résumé de paiement"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/textView30"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_weight="1"
+            android:text="4 x Ticket Aller-Retour\n\nAéroport Tunis-Carthage (TUN) - Aéroport Paris Orly (ORY)\n\n[ 03-05-2019 / 04-05-2019 ]"
+            android:textAlignment="viewStart"
+            android:textStyle="bold|italic" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/textView38"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif"
+            android:gravity="start"
+            android:text="Total : 500 DT TTC"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="30dp" />
+
+    <Button
+        android:id="@+id/button8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:text="Confirmer le paiement" />
+
 </LinearLayout>

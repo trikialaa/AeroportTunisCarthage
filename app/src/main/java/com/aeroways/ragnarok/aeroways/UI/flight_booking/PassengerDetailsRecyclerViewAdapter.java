@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.aeroways.ragnarok.aeroways.R;
@@ -40,11 +41,11 @@ public class PassengerDetailsRecyclerViewAdapter extends RecyclerView.Adapter<Pa
     public void onBindViewHolder(@NonNull PassengerDetailsRecyclerViewAdapter.ViewHolder holder, int position) {
         if (adults>0){
             if (position < adults) holder.textView.setText("Informations de l'adulte N° "+(position+1));
-            else if ((position >= adults) && (position < adults+children )) holder.textView.setText("Informations de l'enfant "+(position+1));
+            else if ((position >= adults) && (position < adults+children )) holder.textView.setText("Informations de l'enfant "+(position-adults+1));
             else {
-                holder.editText4.setVisibility(GONE);
-                holder.editText5.setVisibility(GONE);
-                holder.textView.setText("Informations du bébé "+(position+1));
+                holder.email.setVisibility(GONE);
+                holder.tel.setVisibility(GONE);
+                holder.textView.setText("Informations du bébé "+(position-adults-children+1));
             }
         } else {
             holder.textView.setText("Informations de l'enfant "+(position+1));
@@ -60,6 +61,7 @@ public class PassengerDetailsRecyclerViewAdapter extends RecyclerView.Adapter<Pa
 
         EditText editText1,editText2,editText3,editText4,editText5,editText6,editText7;
         TextView textView;
+        LinearLayout email,tel;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -72,6 +74,9 @@ public class PassengerDetailsRecyclerViewAdapter extends RecyclerView.Adapter<Pa
             editText6 = itemView.findViewById(R.id.editText6);
             editText7 = itemView.findViewById(R.id.editText7);
             textView = itemView.findViewById(R.id.textView28);
+            email = itemView.findViewById(R.id.email);
+            tel = itemView.findViewById(R.id.tel);
+
 
         }
     }

@@ -44,7 +44,6 @@
                 android:layout_height="35dp"
                 android:layout_marginStart="20dp"
                 android:layout_weight="1"
-                android:background="@android:color/widget_edittext_dark"
                 android:ems="10"
                 android:inputType="textPersonName"
                 android:padding="5dp"
@@ -76,7 +75,6 @@
                 android:layout_height="35dp"
                 android:layout_marginStart="20dp"
                 android:layout_weight="1"
-                android:background="@android:color/widget_edittext_dark"
                 android:ems="10"
                 android:inputType="textPersonName"
                 android:padding="5dp"
@@ -84,6 +82,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
@@ -108,7 +107,6 @@
                 android:layout_height="35dp"
                 android:layout_marginStart="20dp"
                 android:layout_weight="1"
-                android:background="@android:color/widget_edittext_dark"
                 android:ems="10"
                 android:inputType="textPersonName"
                 android:padding="5dp"
@@ -116,6 +114,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/tel"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
@@ -140,7 +139,6 @@
                 android:layout_height="35dp"
                 android:layout_marginStart="20dp"
                 android:layout_weight="1"
-                android:background="@android:color/widget_edittext_dark"
                 android:ems="10"
                 android:inputType="textPersonName"
                 android:padding="5dp"
@@ -172,7 +170,6 @@
                 android:layout_height="35dp"
                 android:layout_marginStart="20dp"
                 android:layout_weight="1"
-                android:background="@android:color/widget_edittext_dark"
                 android:ems="10"
                 android:inputType="textPersonName"
                 android:padding="5dp"
@@ -204,7 +201,6 @@
                 android:layout_height="35dp"
                 android:layout_marginStart="20dp"
                 android:layout_weight="1"
-                android:background="@android:color/widget_edittext_dark"
                 android:ems="10"
                 android:inputType="textPersonName"
                 android:padding="5dp"
@@ -236,7 +232,6 @@
                 android:layout_height="35dp"
                 android:layout_marginStart="20dp"
                 android:layout_weight="1"
-                android:background="@android:color/widget_edittext_dark"
                 android:ems="10"
                 android:inputType="textPersonName"
                 android:padding="5dp"
